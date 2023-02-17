@@ -1,0 +1,47 @@
+version: 2.13.0
+
+services:
+  frontend:
+    build:
+      context: frontend
+    environment:
+      BACKEND_URL: $BACKEND_URL
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/src:/frontend/src
+      - ./frontend/public:/frontend/public
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: backend
+    environment:
+      REDIS_URL: $REDIS_URL
+    ports:
+      - 80:80
+    volumes:
+      - ./backend/app:/backend/app
+    depends_on:
+      - redis
+      - tg-bot
+
+  tg-bot:
+    build:
+      context: tg-bot
+    environment:
+      REDIS_URL: $REDIS_URL
+    volumes:
+      - ./tg-bot:/tg-bot
+    depends_on:
+      - redis
+  
+  redis:
+    image: redis:7-alpine
+    restart: always
+    volumes:
+      - redis-data:/data/
+  
+volumes:
+  redis-data:
