@@ -25,7 +25,7 @@ export default function ViewNavBar(props) {
         '/view/' + (Number.parseInt(props.currentView) + 1)
 
     return (
-        <div class="w-full flex place-content-center gap-4">
+        <div class="w-full flex place-content-center gap-4 mt-6">
             <Link to={beforeUrl}>
                 <button 
                     className={

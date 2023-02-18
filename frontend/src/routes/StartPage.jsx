@@ -23,7 +23,7 @@ export default function StartPage() {
                 <span class="font-semibold">Telegram</span>
             </Button>
             <br />
-            <Link to={'/main'}>
+            <Link to={'/view/0'}>
                 <Button background="bg-secondary" className="mt-2">
                     Продолжить
                 </Button>

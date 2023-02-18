@@ -1,4 +1,6 @@
 import Puppy from './assets/puppy.jpg';
+import TextInputHelper from './components/TextInputHelper';
+import CheckboxInputHelper from './components/CheckboxInputHelper';
 
 const views = [];
 
@@ -16,7 +18,25 @@ views.push((
 ));
 
 views.push((
-    <h1>HElol</h1>
+    <>
+        <h1>Вторая страничка</h1>
+        <p>
+            А теперь посмотрим на тестовую форму.
+        </p>
+
+        <TextInputHelper
+            name='test-field'
+            label='Тестовое поле'
+            placeholder='Введите текст'
+            className='w-2/3 mx-auto'
+        />
+
+        <CheckboxInputHelper
+            name='checkbox-test'
+            label='Поле с флажком'
+            className='w-2/3 mx-auto mt-4'
+        />
+    </>
 ))
 
 views.push((
