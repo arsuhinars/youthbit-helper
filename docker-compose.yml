@@ -1,18 +1,17 @@
 version: 2.13.0
 
 services:
-  frontend:
-    build:
-      context: frontend
-    environment:
-      BACKEND_URL: $BACKEND_URL
-    ports:
-      - 3000:3000
-    volumes:
-      - ./frontend/src:/frontend/src
-      - ./frontend/public:/frontend/public
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: frontend
+  #   environment:
+  #     BACKEND_URL: $BACKEND_URL
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./frontend:/frontend
+  #   depends_on:
+  #     - backend
 
   backend:
     build:
